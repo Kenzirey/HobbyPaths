@@ -1,4 +1,4 @@
-package emmanes;
+package emmanes.game;
 
 /**
  * A link between passages.
@@ -7,8 +7,28 @@ public class Link {
     private String text;
     private String reference;
 
+    /**
+     * WIP
+     * @param text
+     * @param reference
+     */
     public Link(String text, String reference) {
+        this.setText(text);
+        this.setReference(reference);
+    }
+
+
+    private void setText(String text) {
+        if ((text == null) || (text.isBlank())) {
+            throw new IllegalArgumentException("Text cannot be null or empty");
+        }
         this.text = text;
+    }
+
+    private void setReference(String reference) {
+        if ((reference == null) || (reference.isBlank())) {
+            throw new IllegalArgumentException("Reference cannot be null or empty");
+        }
         this.reference = reference;
     }
 
@@ -30,17 +50,13 @@ public class Link {
         return reference;
     }
 
-    public String toString() {
-        return "[" + text + "](" + reference + ")";
-    }
-
     /**
      * Checks to see if two link objects are equal.
      * Overriden to remove link comparison problems, 
      * as the only thing that matters is the reference.
      */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object object) {
         if (object instanceof Link type) {
             return reference.equals(type.getReference());
           } else {
@@ -58,6 +74,11 @@ public class Link {
         hash = 31 * hash + (reference == null ? 0 : reference.hashCode());
         return hash;
     }
+
+    @Override
+    public String toString() {
+        return text + "\n" + reference;
+      }
 
 }
 
