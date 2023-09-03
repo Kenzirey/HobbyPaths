@@ -1,11 +1,16 @@
 package emmanes.game;
 
+import java.util.ArrayList;
+
+import emmanes.actions.Action;
+
 /**
  * A link between passages.
  */
 public class Link {
     private String text;
     private String reference;
+    private ArrayList<Action> actions;
 
     /**
      * WIP
@@ -15,6 +20,28 @@ public class Link {
     public Link(String text, String reference) {
         this.setText(text);
         this.setReference(reference);
+
+        this.actions = new ArrayList<>();
+    }
+
+    /**
+     * Adds an action to the current link.
+     *
+     * @param action the action being added to the link.
+     */
+    public void addAction(Action action) {
+        if (action != null) {
+            this.actions.add(action);
+        }
+    }
+
+    /**
+     * Returns the actions of the current link.
+     *
+     * @return actions the actions of the current link.
+     */
+    public ArrayList<Action> getActions() {
+        return this.actions;
     }
 
 

@@ -1,15 +1,24 @@
 package emmanes.game;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import emmanes.goals.Goal;
+
+/**
+ * Connects a player to a story.
+ */
 public class Game {
     private Player player;
     private Story story;
-    // goals
+    private List<Goal> goals;
 
-    public Game(Player player, Story story) {
+    public Game(Player player, Story story, List<Goal> goals) {
+        //TODO: Create set methods for player, story and goals.
         this.player = player;
         this.story = story;
 
-        // TODO: Implement goals
+        this.goals = new ArrayList<>();
     }
 
     public Player getPlayer() {
@@ -18,6 +27,10 @@ public class Game {
 
     public Story geStory() {
         return story;
+    }
+
+    public List<Goal> getGoals() {
+        return this.goals;
     }
 
     /**

@@ -3,6 +3,9 @@ package emmanes.game;
 import java.util.Collection;
 import java.util.Map;
 
+/**
+ * A collection of passages.
+ */
 public class Story {
     private String title;
     private Map<Link, Passage> passages;

@@ -1,5 +1,6 @@
 package emmanes.game;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
@@ -17,6 +18,7 @@ public class Player {
         this.setArmor(armor);
         this.setScore(score);
         this.setGold(gold);
+        this.inventory = new ArrayList<>();
         //TODO: Implement inventory.
     }
 
@@ -151,6 +153,11 @@ public class Player {
         return this.gold;
     }
 
+    /**
+     * Returns the inventory list of the player.
+     *
+     * @return inventory the inventory of the player.
+     */
     public List<String> getInventory() {
         return this.inventory;
     }

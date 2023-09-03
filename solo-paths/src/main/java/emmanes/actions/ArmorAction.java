@@ -6,11 +6,10 @@ public class ArmorAction implements Action {
     private int armor;
 
     private void setArmor(int armor) {
-        if (armor < 0) {
+        if (armor <= 0) {
             throw new IllegalArgumentException("Armor cannot be negative");
-        } else {
-            this.armor = armor;
         }
+            this.armor = armor;
     }
 
     public ArmorAction(int armor) {

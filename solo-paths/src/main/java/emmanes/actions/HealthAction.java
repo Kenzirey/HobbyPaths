@@ -15,7 +15,7 @@ public class HealthAction implements Action {
     }
 
     private void setHealth(int health) {
-        if (health < 0) {
+        if (health <= 0) {
             throw new IllegalArgumentException("Health cannot be negative");
         } else {
             this.health = health;

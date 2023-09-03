@@ -10,7 +10,7 @@ public class ScoreAction implements Action {
     }
 
     private void setScore(int score) {
-        if (score < 0) {
+        if (score <= 0) {
             throw new IllegalArgumentException("Score cannot be negative");
         } else {
             this.score = score;
